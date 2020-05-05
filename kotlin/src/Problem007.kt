@@ -1,4 +1,4 @@
-import kotlin.math.sqrt
+import common.PrimeNumberSequence
 
 /**
  * Problem 7
@@ -9,17 +9,8 @@ import kotlin.math.sqrt
  * What is the 10,001st prime number?
  */
 fun main() {
-    val solution = generateSequence(3L, { it + 2 })
-        .filter { it.isPrime() }
-        .take(10_000)
+    val solution = PrimeNumberSequence()
+        .take(10_001)
         .last()
     println(solution)
-}
-
-fun Long.isPrime(): Boolean {
-    val max = sqrt(this.toDouble())
-    return generateSequence(3L, { it + 2 })
-        .takeWhile { it <= max }
-        .filter { this % it == 0L }
-        .none()
 }
