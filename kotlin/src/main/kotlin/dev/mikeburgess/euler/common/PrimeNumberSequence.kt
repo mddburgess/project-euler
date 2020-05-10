@@ -1,4 +1,4 @@
-package common
+package dev.mikeburgess.euler.common
 
 import kotlin.math.sqrt
 
@@ -19,9 +19,12 @@ class PrimeNumberSequence : Sequence<Long> {
         }
 
         private fun calculateNext(): Long =
-            generateSequence(next + 1) { it + 1 }
-                .filter { isPrime(it) }
-                .first()
+            when (next) {
+                2L -> 3L
+                else -> generateSequence(next + 2) { it + 2 }
+                    .filter { isPrime(it) }
+                    .first()
+            }
 
         private fun isPrime(number: Long): Boolean {
             val max = sqrt(number.toDouble())

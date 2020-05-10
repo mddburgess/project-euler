@@ -1,3 +1,7 @@
+package dev.mikeburgess.euler.problems
+
+import dev.mikeburgess.euler.Problem
+
 /**
  * Problem 6
  *
@@ -14,11 +18,14 @@
  * Find the difference between the sum of the squares of the first one hundred natural numbers and
  * the square of the sum.
  */
-fun main() {
-    val sumOfSquares = LongRange(1, 100).map { it.square() }.sum()
-    val squareOfSums = LongRange(1, 100).sum().square()
-    val solution = squareOfSums - sumOfSquares
-    println(solution)
-}
+class Problem006 : Problem {
 
-fun Long.square(): Long = this * this
+    private fun Long.square(): Long =
+        this * this
+
+    override fun solve(): Long {
+        val sumOfSquares = LongRange(1, 100).map { it.square() }.sum()
+        val squareOfSums = LongRange(1, 100).sum().square()
+        return squareOfSums - sumOfSquares
+    }
+}
