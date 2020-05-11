@@ -20,4 +20,5 @@ enum class Solutions(val problem: Problem, val answer: Long) {
     `Problem 013`(Problem013(), 5_537_376_230),
     `Problem 014`(Problem014(), 837_799),
     `Problem 015`(Problem015(), 137_846_528_820),
+    `Problem 016`(Problem016(), 1_366),
 }
