@@ -1,6 +1,7 @@
 package dev.mikeburgess.euler.problems
 
 import dev.mikeburgess.euler.Problem
+import dev.mikeburgess.euler.sequences.fibonacciNumbers
 
 /**
  * Problem 2
@@ -15,12 +16,8 @@ import dev.mikeburgess.euler.Problem
  */
 class Problem002 : Problem {
 
-    private fun fibonacci(): Sequence<Long> =
-        generateSequence(Pair(1L, 2L), { Pair(it.second, it.first + it.second) })
-            .map { it.first }
-
     override fun solve(): Long =
-        fibonacci()
+        fibonacciNumbers()
             .takeWhile { it < 4_000_000 }
             .filter { it % 2 == 0L }
             .sum()

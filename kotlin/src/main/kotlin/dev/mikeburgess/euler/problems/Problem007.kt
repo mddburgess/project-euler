@@ -1,7 +1,7 @@
 package dev.mikeburgess.euler.problems
 
 import dev.mikeburgess.euler.Problem
-import dev.mikeburgess.euler.common.PrimeNumberSequence
+import dev.mikeburgess.euler.sequences.PrimeNumbers
 
 /**
  * Problem 7
@@ -14,8 +14,7 @@ import dev.mikeburgess.euler.common.PrimeNumberSequence
 class Problem007 : Problem {
 
     override fun solve(): Long =
-        PrimeNumberSequence()
+        PrimeNumbers()
             .take(10_001)
             .last()
 }
-
