@@ -7,8 +7,8 @@ class Problem016 : Problem {
 
     private fun BigInteger.sumDigits() =
         this.toString()
-            .toByteArray()
-            .map { it - '0'.toByte() }
+            .toCharArray()
+            .map { it - '0' }
             .sum()
 
     override fun solve(): Long =
