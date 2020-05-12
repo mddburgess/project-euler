@@ -1,6 +1,7 @@
 package dev.mikeburgess.euler.problems
 
 import dev.mikeburgess.euler.Problem
+import dev.mikeburgess.euler.common.sumDigits
 import java.math.BigInteger
 
 /**
@@ -11,12 +12,6 @@ import java.math.BigInteger
  * What is the sum of the digits of the number 2^1000?
  */
 class Problem016 : Problem {
-
-    private fun BigInteger.sumDigits() =
-        this.toString()
-            .toCharArray()
-            .map { it - '0' }
-            .sum()
 
     override fun solve(): Long =
         BigInteger.valueOf(2).pow(1000).sumDigits().toLong()
