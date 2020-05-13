@@ -2,13 +2,12 @@ package dev.mikeburgess.euler.common
 
 import java.nio.file.Path
 
-fun getResourceAsText(resource: String) =
+fun getResourceAsLines(resource: String) =
     Path.of("src", "main", "resources", resource)
         .toFile()
-        .readText()
+        .readLines()
+        .filter { it.isNotBlank() }
 
 fun getResourceAsInts(resource: String) =
-    getResourceAsText(resource)
-        .lines()
-        .filter { it.isNotBlank() }
+    getResourceAsLines(resource)
         .map { it.split(' ').map(String::toInt) }
