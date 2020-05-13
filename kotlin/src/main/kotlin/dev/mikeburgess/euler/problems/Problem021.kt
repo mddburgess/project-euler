@@ -1,6 +1,7 @@
 package dev.mikeburgess.euler.problems
 
 import dev.mikeburgess.euler.Problem
+import dev.mikeburgess.euler.common.properDivisors
 
 /**
  * Problem 21
@@ -18,11 +19,8 @@ import dev.mikeburgess.euler.Problem
  */
 class Problem021 : Problem {
 
-    private fun Int.properDivisors(): List<Int> =
-        IntRange(1, this / 2).filter { this % it == 0 }
-
     override fun solve(): Long {
-        val sums = (1..9999).associateWith { it.properDivisors().sum() }
+        val sums = (1..9999).associateWith { it.properDivisors.sum() }
         return sums.filter { (a, b) -> a != b }
             .mapValues { (_, b) -> sums[b] }
             .filter { (a, b) -> a == b }
