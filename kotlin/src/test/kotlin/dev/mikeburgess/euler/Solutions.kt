@@ -26,5 +26,6 @@ val solutions: Map<Int, Long> = mapOf(
     23 to 4179871L,
     24 to 2783915460L,
     25 to 4782L,
-    26 to 983L
+    26 to 983L,
+    27 to -59231L
 )

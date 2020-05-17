@@ -19,17 +19,22 @@ class PrimeSequence : Sequence<Long> {
 
         private fun computeNext() =
             generateSequence(primes.last() + 2) { it + 2 }
-                .filter { it.isPrime() }
+                .filter { isPrime(it) }
                 .first()
                 .also { primes.add(it) }
 
-        private fun Long.isPrime() =
+        private fun isPrime(n: Long) =
             primes.asSequence()
-                .takeWhile { it <= sqrt(this.toDouble()) }
-                .none { this % it == 0L }
+                .takeWhile { it <= sqrt(n.toDouble()) }
+                .none { n % it == 0L }
     }
 
     companion object {
         private val primes: MutableList<Long> = mutableListOf(2, 3)
     }
+}
+
+fun Long.isPrime(): Boolean = when {
+    this < 2L -> false
+    else -> PrimeSequence().takeWhile { it <= this }.last() == this
 }
