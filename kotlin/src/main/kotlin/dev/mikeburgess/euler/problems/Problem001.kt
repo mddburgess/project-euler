@@ -1,7 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
-
 /**
  * Problem 1
  *
@@ -13,7 +11,6 @@ import dev.mikeburgess.euler.Problem
 class Problem001 : Problem {
 
     override fun solve(): Long =
-        LongRange(1, 999)
-            .filter { it % 3 == 0L || it % 5 == 0L }
+        (1..999L).filter { it % 3 == 0L || it % 5 == 0L }
             .sum()
 }

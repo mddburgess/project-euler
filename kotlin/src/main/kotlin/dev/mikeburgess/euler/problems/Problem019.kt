@@ -1,6 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
 import java.time.DayOfWeek.SUNDAY
 import java.time.LocalDate
 

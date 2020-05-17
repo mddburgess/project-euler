@@ -1,8 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
-import dev.mikeburgess.euler.common.SolutionNotFound
-
 /**
  * Problem 8
  *
@@ -44,5 +41,5 @@ class Problem008 : Problem {
         IntRange(13, number.length)
             .map { number.subSequence(it - 13, it) }
             .map(::product)
-            .max() ?: throw SolutionNotFound()
+            .max()!!
 }

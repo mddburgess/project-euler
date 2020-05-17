@@ -1,4 +1,4 @@
-package dev.mikeburgess.euler
+package dev.mikeburgess.euler.problems
 
 interface Problem {
 

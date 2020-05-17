@@ -1,6 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
 import dev.mikeburgess.euler.common.factorial
 
 /**

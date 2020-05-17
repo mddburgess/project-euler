@@ -1,7 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
-
 /**
  * Problem 6
  *
@@ -24,8 +22,8 @@ class Problem006 : Problem {
         this * this
 
     override fun solve(): Long {
-        val sumOfSquares = LongRange(1, 100).map { it.square() }.sum()
-        val squareOfSums = LongRange(1, 100).sum().square()
+        val sumOfSquares = (1..100L).map { it.square() }.sum()
+        val squareOfSums = (1..100L).sum().square()
         return squareOfSums - sumOfSquares
     }
 }

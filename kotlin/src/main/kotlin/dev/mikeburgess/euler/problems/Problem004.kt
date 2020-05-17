@@ -1,8 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
-import dev.mikeburgess.euler.common.SolutionNotFound
-
 /**
  * Problem 4
  *
@@ -25,9 +22,8 @@ class Problem004 : Problem {
     }
 
     override fun solve(): Long =
-        LongRange(100, 999)
-            .associateWith { LongRange(it, 999) }
+        (100..999L).associateWith { (it..999L) }
             .flatMap { entry -> entry.value.map { entry.key * it } }
             .filter { it.isPalindrome() }
-            .max() ?: throw SolutionNotFound()
+            .max()!!
 }

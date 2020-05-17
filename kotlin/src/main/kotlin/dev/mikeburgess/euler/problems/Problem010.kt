@@ -1,7 +1,6 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
-import dev.mikeburgess.euler.sequences.PrimeNumbers
+import dev.mikeburgess.euler.sequences.PrimeSequence
 
 /**
  * Problem 10
@@ -13,7 +12,7 @@ import dev.mikeburgess.euler.sequences.PrimeNumbers
 class Problem010 : Problem {
 
     override fun solve(): Long =
-        PrimeNumbers()
+        PrimeSequence()
             .takeWhile { it < 2_000_000 }
             .sum()
 }

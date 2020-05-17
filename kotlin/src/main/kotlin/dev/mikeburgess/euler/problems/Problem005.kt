@@ -1,7 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
-
 /**
  * Problem 5
  *
@@ -22,5 +20,5 @@ class Problem005 : Problem {
         }
 
     override fun solve(): Long =
-        LongRange(1, 20).reduce(::lcm)
+        (1..20L).reduce(::lcm)
 }

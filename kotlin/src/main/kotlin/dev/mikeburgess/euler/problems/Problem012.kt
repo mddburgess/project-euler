@@ -1,7 +1,6 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
-import dev.mikeburgess.euler.sequences.PrimeNumbers
+import dev.mikeburgess.euler.sequences.PrimeSequence
 import dev.mikeburgess.euler.sequences.triangleNumbers
 import kotlin.math.sqrt
 
@@ -29,7 +28,7 @@ import kotlin.math.sqrt
  */
 class Problem012 : Problem {
 
-    private val primes = PrimeNumbers()
+    private val primes = PrimeSequence()
 
     private fun Long.countDivisors(): Int =
         when (this) {

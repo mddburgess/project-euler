@@ -1,6 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
 import dev.mikeburgess.euler.common.properDivisors
 
 /**
@@ -39,7 +38,7 @@ class Problem023 : Problem {
             return false
         }
 
-        return (1..28123).filter { !it.isSumOfTwoAbundant() }
+        return (1..28123).filterNot { it.isSumOfTwoAbundant() }
             .map { it.toLong() }
             .sum()
     }

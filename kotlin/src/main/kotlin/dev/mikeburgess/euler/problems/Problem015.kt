@@ -1,7 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
-
 /**
  * Problem 15
  *

@@ -1,7 +1,5 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
-
 /**
  * Problem 9
  *
@@ -16,14 +14,14 @@ import dev.mikeburgess.euler.Problem
  */
 class Problem009 : Problem {
 
-    private infix fun <A, B, C> Pair<A, B>.to(c: C): Triple<A, B, C> =
+    private infix fun <A, B, C> Pair<A, B>.to(c: C) =
         Triple(this.first, this.second, c)
 
-    private fun Triple<Long, Long, Long>.isPythagorean(): Boolean =
+    private fun Triple<Long, Long, Long>.isPythagorean() =
         first * first + second * second == third * third
 
     override fun solve(): Long {
-        val (a, b, c) = LongRange(1, 332)
+        val (a, b, c) = (1..332L)
             .flatMap { a -> LongRange(a + 1, (1000 - a) / 2).map { b -> a to b } }
             .map { (a, b) -> a to b to 1000 - a - b }
             .first { it.isPythagorean() }

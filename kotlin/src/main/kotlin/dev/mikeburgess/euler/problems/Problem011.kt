@@ -1,8 +1,6 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.Problem
 import dev.mikeburgess.euler.common.Grid
-import dev.mikeburgess.euler.common.SolutionNotFound
 
 /**
  * Problem 11
@@ -53,6 +51,5 @@ class Problem011 : Problem {
             grid.transform { grid, r, c ->
                 grid[r, c] * grid[r + 1, c - 1] * grid[r + 2, c - 2] * grid[r + 3, c - 3]
             }
-        ).mapNotNull { it.max() }
-            .max() ?: throw SolutionNotFound()
+        ).mapNotNull { it.max() }.max()!!
 }

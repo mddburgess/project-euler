@@ -2,7 +2,8 @@ package dev.mikeburgess.euler.sequences
 
 import kotlin.math.sqrt
 
-class PrimeNumbers : Sequence<Long> {
+@OEIS("A000040")
+class PrimeSequence : Sequence<Long> {
 
     override fun iterator(): Iterator<Long> = object : Iterator<Long> {
 
@@ -13,10 +14,10 @@ class PrimeNumbers : Sequence<Long> {
         override fun next() =
             when {
                 index < primes.size -> primes[index]
-                else -> calculateNext()
+                else -> computeNext()
             }.also { ++index }
 
-        private fun calculateNext() =
+        private fun computeNext() =
             generateSequence(primes.last() + 2) { it + 2 }
                 .filter { it.isPrime() }
                 .first()
@@ -29,6 +30,6 @@ class PrimeNumbers : Sequence<Long> {
     }
 
     companion object {
-        val primes: MutableList<Long> = mutableListOf(2, 3)
+        private val primes: MutableList<Long> = mutableListOf(2, 3)
     }
 }
