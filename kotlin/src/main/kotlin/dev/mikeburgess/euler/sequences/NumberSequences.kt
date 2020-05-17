@@ -1,14 +1,5 @@
 package dev.mikeburgess.euler.sequences
 
-fun collatzSequence(start: Long) =
-    generateSequence(start) {
-        when {
-            it == 1L -> null
-            it % 2 == 0L -> it / 2
-            else -> 3 * it + 1
-        }
-    }
-
 fun fibonacciNumbers() =
     generateSequence(1L to 2L) { (a, b) -> b to a + b }
         .map { it.first }

@@ -1,8 +1,7 @@
 package dev.mikeburgess.euler.problems
 
 import dev.mikeburgess.euler.Problem
-import dev.mikeburgess.euler.common.SolutionNotFound
-import dev.mikeburgess.euler.sequences.collatzSequence
+import dev.mikeburgess.euler.sequences.CollatzLengthSequence
 
 /**
  * The following iterative sequence is defined for the set of positive integers:
@@ -25,8 +24,9 @@ import dev.mikeburgess.euler.sequences.collatzSequence
 class Problem014 : Problem {
 
     override fun solve(): Long =
-        LongRange(1, 999_999)
-            .map { it to collatzSequence(it).count().toLong() }
-            .maxBy { it.second }
-            ?.first ?: throw SolutionNotFound()
+        CollatzLengthSequence()
+            .take(999_999)
+            .withIndex()
+            .maxBy { it.value }!!
+            .index + 1L
 }
