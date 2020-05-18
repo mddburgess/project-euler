@@ -1,6 +1,6 @@
 package dev.mikeburgess.euler.problems
 
-import dev.mikeburgess.euler.common.permutations
+import dev.mikeburgess.euler.sequences.permutationsOf
 
 /**
  * Problem 32
@@ -32,12 +32,10 @@ class Problem032 : Problem {
         first == other || second == other
 
     override fun solve(): Long =
-        listOf(1, 2, 3, 4, 5, 6, 7, 8, 9).permutations()
+        permutationsOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
             .map { it.subList(0, 4).toInt() to candidateProducts(it.subList(4, 9)) }
             .filter { (product, candidates) -> product in candidates }
             .map { it.first }
             .distinct()
             .sum().toLong()
 }
-
-
