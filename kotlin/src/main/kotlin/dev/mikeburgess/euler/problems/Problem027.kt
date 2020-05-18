@@ -28,12 +28,11 @@ import dev.mikeburgess.euler.sequences.isPrime
  */
 class Problem027 : Problem {
 
-    private fun countConsecutivePrimes(a: Long, b: Long): Long {
-        return generateSequence(0L) { it + 1 }
+    private fun countConsecutivePrimes(a: Long, b: Long) =
+        generateSequence(0L) { it + 1 }
             .map { it * (it + a) + b }
             .takeWhile { it.isPrime() }
             .count().toLong()
-    }
 
     override fun solve(): Long {
         val (a, b) = PrimeSequence()
