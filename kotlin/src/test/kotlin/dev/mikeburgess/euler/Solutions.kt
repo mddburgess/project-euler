@@ -30,5 +30,6 @@ val solutions: Map<Int, Long> = mapOf(
     27 to -59231L,
     28 to 669171001L,
     29 to 9183L,
-    30 to 443839L
+    30 to 443839L,
+    31 to 73682L
 )
