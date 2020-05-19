@@ -1,5 +1,7 @@
 package dev.mikeburgess.euler.problems
 
+import dev.mikeburgess.euler.common.lcm
+
 /**
  * Problem 5
  *
@@ -10,15 +12,6 @@ package dev.mikeburgess.euler.problems
  */
 class Problem005 : Problem {
 
-    private fun lcm(x: Long, y: Long): Long =
-        x * y / gcd(x, y)
-
-    private fun gcd(x: Long, y: Long): Long =
-        when (y) {
-            0L -> x
-            else -> gcd(y, x % y)
-        }
-
     override fun solve(): Long =
-        (1..20L).reduce(::lcm)
+        (1..20L).reduce { x, y -> lcm(x, y) }
 }
