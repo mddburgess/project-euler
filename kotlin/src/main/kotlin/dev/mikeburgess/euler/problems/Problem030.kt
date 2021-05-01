@@ -1,5 +1,6 @@
 package dev.mikeburgess.euler.problems
 
+import dev.mikeburgess.euler.common.digits
 import kotlin.math.pow
 
 /**
@@ -22,11 +23,9 @@ class Problem030 : Problem {
 
     private val fifthPowers = (0..9).map { it.toDouble().pow(5).toInt() }
 
-    private fun Int.digits() = toString().toCharArray().map { it - '0' }
-
     override fun solve(): Long =
         (2..354294)
-            .associateWith { it.digits().map { digit -> fifthPowers[digit] }.sum() }
+            .associateWith { it.digits.map { digit -> fifthPowers[digit] }.sum() }
             .filter { (number, digitSum) -> number == digitSum }
             .keys.sum().toLong()
 }
