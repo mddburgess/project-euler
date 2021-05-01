@@ -34,5 +34,6 @@ val problems: Map<Int, Problem> = mapOf(
     31 to Problem031(),
     32 to Problem032(),
     33 to Problem033(),
-    34 to Problem034()
+    34 to Problem034(),
+    35 to Problem035()
 )

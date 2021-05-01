@@ -6,3 +6,5 @@ fun gcd(x: Long, y: Long): Long = when (y) {
     0L -> x
     else -> gcd(y, x % y)
 }
+
+fun Long.isEven() = this % 2 == 0L
