@@ -20,9 +20,8 @@ import dev.mikeburgess.euler.common.isPandigital
  */
 class Problem038 : Problem {
 
-    override fun solve(): Long {
-        return (9487 downTo 9234)
+    override fun solve(): Long =
+        (9487 downTo 9234)
             .map { it * 100002L }
             .first { it.isPandigital() }
-    }
 }
