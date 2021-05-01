@@ -18,3 +18,15 @@ fun Long.isPalindrome(base: Long = 10): Boolean {
     }
     return this == reverse
 }
+
+fun Long.isPandigital(): Boolean {
+    var mask = 0
+    var number = this
+    var length = 0
+    while (number > 0) {
+        mask = mask or (1 shl (number % 10).toInt())
+        number /= 10
+        length++
+    }
+    return (mask + 2) == 1 shl (length + 1)
+}
