@@ -36,5 +36,6 @@ val solutions: Map<Int, Long> = mapOf(
     33 to 100L,
     34 to 40730L,
     35 to 55L,
-    36 to 872187L
+    36 to 872187L,
+    37 to 748317L
 )

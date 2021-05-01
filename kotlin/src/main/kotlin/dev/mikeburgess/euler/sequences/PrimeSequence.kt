@@ -1,5 +1,6 @@
 package dev.mikeburgess.euler.sequences
 
+import dev.mikeburgess.euler.common.isEven
 import kotlin.math.sqrt
 
 @OEIS("A000040")
@@ -22,6 +23,7 @@ class PrimeSequence : Sequence<Long> {
                 .filter { isPrime(it) }
                 .first()
                 .also { primes.add(it) }
+                .also { primeSet.add(it) }
 
         private fun isPrime(n: Long) =
             primes.asSequence()
@@ -30,11 +32,12 @@ class PrimeSequence : Sequence<Long> {
     }
 
     companion object {
-        private val primes: MutableList<Long> = mutableListOf(2, 3)
+        val primes = mutableListOf(2L, 3L)
+        val primeSet = mutableSetOf(2L, 3L)
     }
 }
 
 fun Long.isPrime(): Boolean = when {
-    this < 2L -> false
+    this <= PrimeSequence.primes.last() -> PrimeSequence.primeSet.contains(this)
     else -> PrimeSequence().takeWhile { it <= this }.last() == this
 }

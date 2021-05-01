@@ -2,7 +2,6 @@ package dev.mikeburgess.euler.problems
 
 import dev.mikeburgess.euler.common.isEven
 import dev.mikeburgess.euler.sequences.PrimeSequence
-import dev.mikeburgess.euler.sequences.isPrime
 import kotlin.math.floor
 import kotlin.math.log10
 import kotlin.math.pow
