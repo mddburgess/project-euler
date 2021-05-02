@@ -41,5 +41,6 @@ val solutions: Map<Int, Long> = mapOf(
     38 to 932718654L,
     39 to 840L,
     40 to 210L,
-    41 to 7652413L
+    41 to 7652413L,
+    42 to 162L
 )
